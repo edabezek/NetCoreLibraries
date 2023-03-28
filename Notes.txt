@@ -3,4 +3,10 @@ FluentValidation
 -Custom olarak yazdýðýmýz hata mesajlarý client tarafýnda direkt olarak gözükmez.Mutlaka server'a gitmesi gerekiyor. Server'a gittikten sonra bu hata mesajlarýný görebiliriz.(Not : gömülü - hazýr validator'larý kullandýðýmýz zaman server'a gitmesine gerek yok, Mesela NotEqual metodu. Ama bazýlarýnda yok yani Required karþýlýðý NotEmpty) Yani karþýlýðý varsa servera gitmeden hata mesajýný gösterebiliriz, yoksa servera gitmemiz gerekiyor.Dolayýsyla kendi yazdýðýmýz Custom Validator'larýn karþýlýðý olmayacaðýndan dolayý servera gidip mesajý göstermemiz gerekiyor.
 - ModelState.IsValid : Doðrulama kurallarýný direkt olarak ModelState üzerinden kontrol edebiliriz.ModelState.IsValid true gelirse bizim CustomerValidator içinde yazmýþ olduðumuz tüm kurallardan geçmiþtir demek olur.FluentValidation ModelState ile entegre çalýþýyor.Bunu kullanmak istemezsek Validate metodunu kullanabiliriz.
 
--Enum Validator : 
+AutoMapper 
+-Client'in görmesi gereken entity propertylerini Dto kýsmýnda tanýmlýyoruz.Böylelikle dýþa açmak istediklerimizi DTO 'larda belirtiyoruz.
+AutoMapper bu Model/Entity ve DTO'larý birbirine eþitler.Eðer eþitleme yapmazsak ProductDto'yu veritabanýna kaydetmek için ekstra kod yazmamýz gerekirdi.AutoMapper , object to object maplemesini yapýyor.
+-eðer Dto ile Entity property isimleri farklýysa , bunlarý eþlemesini belirtmeliyiz.
+-Flattening düzleþtirme , diyelim clasýmýzýn içinde property olarak metotlar olsun,bunu sadece property barýndýran iþleme çevirmeye denir.
+-Projection ,bir datayý parçalayýp birden fazla property e eþleþtirmedir.
+
