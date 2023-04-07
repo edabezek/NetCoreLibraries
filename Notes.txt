@@ -10,3 +10,19 @@ AutoMapper bu Model/Entity ve DTO'larý birbirine eþitler.Eðer eþitleme yapmazsak
 -Flattening düzleþtirme , diyelim clasýmýzýn içinde property olarak metotlar olsun,bunu sadece property barýndýran iþleme çevirmeye denir.
 -Projection ,bir datayý parçalayýp birden fazla property e eþleþtirmedir.
 
+RateLimit
+-Api uygulamamýzda kullanmýþ olduðumuz endpointler üzerinde bir sýnýrlama getirebileceðimiz Rate limit oluyor.
+-Diyelim bir endpointimiz var ve bu dýþ dünyaya açýk , biz endpoint üzerinde þöyle bir kural koyarsak bir saatte 100 tane requesti karþýlayabilir. Fazlasý gelirse de cevap dönmeyiz.
+-Apilerde rate limit kullanmamýzýn 2 önemli sebebi var : Güvenlik-DOs ve Ölçekleme
+-Ýki çeþit Rate Limit kullanabiliriz : 
+1-IP Rate Limit : Belirli Ip adreslerinin  sýnýrlama için (ate-limit'in amacý  %100 engellemek deðil, kýsýtlama getirmektir 100% engeleme kullanmak isityorsan,  token kullanýrsýn)
+2-Client Rate Limit : X client Id deðerine sýnýrsýz istek yap
+-Best practice de ortalama request'e göre yapýlabilir.
+Not : Eðer bizim uygulamamýz bir tane instance ayaða kalkýyorsa MemCache kullanmamýz uygun , ama birden fazla instance alýyorsak uygulamadan mesela Docker yaptýk, uygulamamýzdan 5 tane konteyner ayaða kaldýrdýk diyelim , Startup>ConfigureServices kýsmýnda belirtmiþ olduðumuz þartlarý merkezi bir yerde -merkezi bir memory- tutmamýz gerekiyor.Merkezi bir memory'de tutabilmemiz için distrubuted cache kullanmamýz lazým -örneðin redis- . Merkezi bir yerde tutulmasý gerekmesinini sebebi bu request sayýlarýnýn tutarlý olmasý gerekiyor.Eðer kullanmazsak , uygulamalarýmýz o konteynerdeki memory de iþlem göreceði için tutarsýz olur.
+EnableEndpointRateLimiting : Tek tek endpoint üzerinden sýnýrlama belirtebiliriz , true ile bu özelliði açmýþ oluruz.
+StackBlockedRequests : Bir endpoint'e dk da 60 istek yapýlabilir, saatte de toplamda 1000 tane yapýlabilir dedik diyelim.diyelim dakikada 100 istek geldi, bu 40 istek sayýlacak mý sayýlmayacak mý onu belirleriz, true yaparsak sayýlýr.
+HttpStatusCode : istekler baþarýsýz olursa 429-too many request yaptýn diye dönüyoruz.
+
+GeneralRules : request kýsýtlarýmýzý burada yazacaðýz , Mesela 20 saniyede 2 request yapabilirsin (ilgili endpoint'e) diyoruz : 
+        "Period": "20s",
+        "Limit": 2

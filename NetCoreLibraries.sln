@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.33027.164
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidations.Web", "FluentValidations.Web\FluentValidations.Web.csproj", "{786B9C34-92BE-44C9-AE67-26522AB2788D}"
 EndProject
@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		Notes.txt = Notes.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateLimits.API", "RateLimits.API\RateLimits.API.csproj", "{A1619E88-CD8E-47AC-B571-90FBE80DAE1B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +22,10 @@ Global
 		{786B9C34-92BE-44C9-AE67-26522AB2788D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{786B9C34-92BE-44C9-AE67-26522AB2788D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{786B9C34-92BE-44C9-AE67-26522AB2788D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1619E88-CD8E-47AC-B571-90FBE80DAE1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1619E88-CD8E-47AC-B571-90FBE80DAE1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1619E88-CD8E-47AC-B571-90FBE80DAE1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1619E88-CD8E-47AC-B571-90FBE80DAE1B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
