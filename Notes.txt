@@ -26,3 +26,18 @@ HttpStatusCode : istekler baþarýsýz olursa 429-too many request yaptýn diye dönü
 GeneralRules : request kýsýtlarýmýzý burada yazacaðýz , Mesela 20 saniyede 2 request yapabilirsin (ilgili endpoint'e) diyoruz : 
         "Period": "20s",
         "Limit": 2
+---EKSÝK---
+
+
+Smidge 
+-Asp .Net core uygulamalarýnda Bundling ve Minification iþlemini runtime'da otomatik bir þekilde gerçekleþtiren bir kütüphanedir.Bu iki taným benzerdir
+Yaptýklarý iþlemler , web sitelerin performanslarýný arttýrmak amacýyla kullanýlýr.
+-Bundling , birden fazla dosyayý tek bir dosya içerisinde birleþtirmek
+anlamýna gelir yani demet yapýyoruz.Bunun bize yararý þu : diyelim 3 tane javascript dosyamýz var.Bunlara eriþmek için 3 kere istek yapmamýz gerekecek.
+eðer birleþtirirsek 1 istek yeterli olacak.Ýsteklerin azalmasý sebebiyle bizim sayfanýn ilk yüklenme hýzýný arttýracaktýr.(ilk yüklenmede olur, ikinci 
+yüklenmede browser cache'den(App_Data oluþturduk appsettings'de) çeker.)
+-Minification , bir js veya css dosyasýnda içerisindeki gereksiz karakterlerden temizleme iþlemine denir.Yorum satýrý , boþluklar vs dosyanýn fonksi
+yonunu bozmadan yapar.
+-Frontend tarafta Gulp ,Ground vs kullanýlabilir.
+-Smidge kütüphanesinde debug modu : development kýsmýnda bizim dosyalarýmýz birleþirse rahat geliþtirme yapamayýz.Bunun için Debug isminde bir TagHelper(environment)
+ile bir dosyayý iþaretlersek o dosyayý ayrý olarak tutuyor.
