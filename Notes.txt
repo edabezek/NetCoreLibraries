@@ -41,3 +41,20 @@ yonunu bozmadan yapar.
 -Frontend tarafta Gulp ,Ground vs kullanýlabilir.
 -Smidge kütüphanesinde debug modu : development kýsmýnda bizim dosyalarýmýz birleþirse rahat geliþtirme yapamayýz.Bunun için Debug isminde bir TagHelper(environment)
 ile bir dosyayý iþaretlersek o dosyayý ayrý olarak tutuyor.
+
+
+Hangfire 
+
+-Arka planda kodlar çalýþtýrmak için kullanýlýr.Core üzerinde çalýþýr .
+-Hangfire gerekli bilgileri kaydetmek için bir veritabaný kullanýr,yapýlacak iþleri kaydeder.
+-Ýþleri Memory'de de tutabiliriz.
+-Kullanýcý bir resim eklediði zaman , biz ona resim ekleyeceðiz .
+-Job türü: FireAndForget : tek seferde çalýþacak kod için , örneðin kullanýcý siteye üye olduðunda mesaj göndermek için
+Delayed : belli bir süre sonra çalýþmasýný istediðimiz þeyler için , kullanýcý üye olduktan bir saat sonra mail bilgilendirmesi göndermek
+Recurring : belli aralýklarla çalýþmasýný istediðimiz joblar , her ayýn 1inde rapor oluþturmak için 
+Continuations : diðer joblardan sonra çalýþacak bir kodumuz varsa , mesela fire and forget ten sonra çalýþacak bir job 
+
+Hangfire.AspNetCore
+Hangfire.Core
+Hangfire.SqlServer
+
