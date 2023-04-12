@@ -68,9 +68,11 @@ namespace Hangfire.Web.Controllers
                 }
 
                 string jobId = BackGroundJob.DelayedJobs.AddWaterMarkJob(newFileName, "www.mysite.com");
+
+                BackGroundJob.ContinuationsJob.WriteWaterMarkStatusJob(jobId,newFileName);
             }
 
-            return View(picture);  
+            return View();  
         }
     }
 }
